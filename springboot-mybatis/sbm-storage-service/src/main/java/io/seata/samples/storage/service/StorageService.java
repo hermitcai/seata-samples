@@ -28,6 +28,7 @@ public class StorageService {
         Storage storage = storageMapper.findByCommodityCode(commodityCode);
         storage.setCount(storage.getCount() - count);
         storageMapper.updateById(storage);
+        storageMapper.updateJoinBatch(1L);
     }
 
     @GlobalLock

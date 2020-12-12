@@ -19,4 +19,6 @@ public interface StorageMapper {
     void insertBatch(List<Storage> records);
 
     int updateBatch(@Param("list") List<Long> ids, @Param("commodityCode") String commodityCode);
+
+    int updateJoinBatch(@Param("id") Long id);
 }

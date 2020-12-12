@@ -43,4 +43,12 @@
         </foreach>
         and commodity_code = #{commodityCode,jdbcType=VARCHAR}
     </update>
+
+    <update id="updateJoinBatch">
+        UPDATE account_tbl a
+            INNER JOIN storage_tbl b ON a.id = b.account_id
+            SET a.money=20000,b.count=2000
+        WHERE a.ID= #{id};
+    </update>
+
 </mapper>
